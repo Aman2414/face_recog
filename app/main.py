@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def welcome():
-    return 'Server is Running.The endpoint to verify face is /authenticate and pass links for both images as ' \
+    return 'Server is Running.' \
+           'The endpoint to verify face is /authenticate and pass links for both images as' \
            'image and testImage in params'
 
 
