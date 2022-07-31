@@ -2,7 +2,6 @@ import urllib.request
 import cv2
 from flask import Flask, jsonify, request
 import face_recognition
-import os
 
 app = Flask(__name__)
 
@@ -24,9 +23,3 @@ def check_face():
         results = face_recognition.compare_faces([encodeElon], encodeElonTest)
         response = {"result": bool(results[0])}
         return jsonify(response)
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    print(port)
-    app.run(host='0.0.0.0', port=port)
