@@ -25,7 +25,3 @@ def check_face():
         results = face_recognition.compare_faces([encodeElon], encodeElonTest)
         response = {"result": bool(results[0])}
         return jsonify(response)
-
-
-if __name__ == "__main__":
-    app.run()
