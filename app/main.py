@@ -1,10 +1,13 @@
 import urllib.request
 import cv2
+import sys
+import logging
 from flask import Flask, jsonify, request
 import face_recognition
 
 app = Flask(__name__)
-
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def welcome():
